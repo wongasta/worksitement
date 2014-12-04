@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>worksitement staging</title>
+  <meta name="viewport" content="width=990, maximum-scale=1.0" />
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='/css/style.css' rel='stylesheet'/>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+
+h1 {
+  font-size:14px;
+  margin-bottom: 4px;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.jobs {
+  font-size:12px;
+  line-height:18px;
+}
+
+.jobs a{
+  color:#555;
+  text-decoration: none;
+}
+
+div.over:hover {
+  background-color: #0db1e2;
+  color:#fff;
+  background-image:url('/img/over-div-0.gif');
+}
+
+div.over:hover a {
+  color:#fff;
+}
+
+#slideshow {
+    width: 550px; 
+    height: 325px;
+}
+
+#slideshow > div {
+    width: 550px; 
+    height: 0px;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+</style>
+
+
+</head>
+<body ng-app="ngCom" ng-controller="ngComCtrl as com">
+<!-- Start Header-->
+<div style="background-color:#fff;">
+    <div id="header">
+        <div style="position: absolute; margin: 16px 0 0 0;"><a href="/index.php"><img src="/img/logo.png" alt="Worksitement" style="border:0;" /></a></div>
+
+        <div style="position:absolute; margin: 60px 0 0 486px;">
+            <ul id="navlist">
+                <li><a href="/why-worksitement.php">Why Worksitement</a></li>
+                <li><a href="/about-us.php">About Us</a></li>
+                <li><a href="/employers.php">Employers</a></li>
+            </ul>
+        </div>
+
+        <div style="position:absolute; margin: 24px 0 0 830px;">
+            <a href="/get-access.php" class="sign-up sign-up-1">Get Access</a>
+        </div>
+
+    </div>
+</div>
+
+<div id="yellow"></div>
+<!-- End Header -->
+
+</div>
+
+<!-- Start Body Content 1-->
+<div id="body-company-page">
+
+<table width="990" border="0">
+  <tbody>
+    <tr>
+      
+      <div style="height:20px;"></div>
+      <td valign="top" width="420" align="center">
+          <div style="text-align:center; background-color:#fff; height:300px; margin: 0 auto;"><img width="140" ng-src="{{cdata.logo}}" />
+
+          <div style="line-height: 26px; color:#555; text-align:center;">
+                  <table width="200" border="0" class="center">
+                    <tbody>
+                        <tr>
+                        <td align="left" valign="middle">Company</td>
+                        <td align="right" valign="middle">{{cdata.company}}</td>
+                      <tr>
+                        <td align="left" valign="middle">Founded</td>
+                        <td align="right" valign="middle">{{cdata.founded}}</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="middle">Industry</td>
+                        <td align="right" valign="middle">{{cdata.industry}}</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="middle">Size</td>
+                        <td align="right" valign="middle">{{cdata.employeeNumber}} employees</td>
+                      </tr>
+                    </tbody>
+                  </table>
+          </div>
+
+          <p style="margin-top:20px; color:#7d7d7d;">Austin, Texas</p></div></div>
+          
+          <!-- Start Perk Icons -->
+
+          
+          <div style="text-align:center; background-color:#fff; padding:2px; margin-top:28px; padding:14px 14px 14px 18px;"  class="clearfix">
+          
+          <div style="margin: 0 auto; width: 100%; overflow: hidden;" >
+
+          <p style="color:#00b0e1; font-weight:bold; font-size: 14px; text-align:left; margin: 4px 0 8px 8px;">Company Perks</p>
+            <!-- Perk Icon Row Start -->
+
+                <table width="380" border="0">
+                  <tbody>
+                    <tr>
+                      <td width="170px">
+
+                      <!-- Perk Item Left Box Start -->
+                      <div style="width: 100%; overflow: hidden; border: 1px solid #ccc;  font-size: 11px;">
+
+                            <div style="width: 50px; float: left; text-align:center">
+                              <img src="/img/perk-icon-clock.png" style="padding: 8px; width:32px;">
+                            </div>
+
+                            <div style="margin-left: 50px;  text-align:center; color:#707070; padding-top:16px;">
+                              Flexible Schedule
+                            </div>
+
+                      </div>
+                      <!-- Perk Item Left Box End -->
+
+                      </td>
+                      
+                      <td width="10px"></td>
+                      
+                      <td width="170px">
+                        
+                      <!-- Perk Item Right Box Start -->
+                      <div style="width: 100%; overflow: hidden; border: 1px solid #ccc; font-size: 11px;">
+
+                            <div style="width: 50px; float: left; text-align:center">
+                              <img src="/img/perk-icon-barbell.png" style="padding: 8px; width:32px;">
+                            </div>
+
+                            <div style="margin-left: 50px;  text-align:center; color:#707070; padding-top:16px;">
+                              Fitness
+                            </div>
+
+                       </div>
+                       <!-- Perk Item Right Box End -->
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- Perk Icon Row End -->
+
+
+
+
+            <!-- Perk Icon Row Start -->
+
+                <table width="380" border="0">
+                  <tbody>
+                    <tr>
+                      <td width="170px">
+
+                      <!-- Perk Item Left Box Start -->
+                      <div style="width: 100%; overflow: hidden; border: 1px solid #ccc; margin-top: 8px;  font-size: 11px;">
+
+                            <div style="width: 50px; float: left; text-align:center">
+                              <img src="/img/perk-icon-suitcase.png" style="padding: 8px; width:32px;">
+                            </div>
+
+                            <div style="margin-left: 50px;  text-align:center; color:#707070; padding-top:16px;">
+                              Vacation Policy
+                            </div>
+
+                      </div>
+                      <!-- Perk Item Left Box End -->
+
+                      </td>
+                      
+                      <td width="10px"></td>
+                      
+                      <td width="170px">
+                        
+                      <!-- Perk Item Right Box Start -->
+                      <div style="width: 100%; overflow: hidden; border: 1px solid #ccc; margin-top: 8px;  font-size: 11px;">
+
+                            <div style="width: 50px; float: left; text-align:center">
+                              <img src="/img/perk-icon-happyhour.png" style="padding: 8px; width:32px;">
+                            </div>
+
+                            <div style="margin-left: 50px;  text-align:center; color:#707070; padding-top:16px;">
+                              Happy Hours
+                            </div>
+
+                       </div>
+                       <!-- Perk Item Right Box End -->
+
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- Perk Icon Row End -->
+
+
+                <div id="more" style="display: none;" class="clearfix">
+                  
+                    <div style="padding-top: 16px;">
+                      <table width="380" border="0" cellpadding="0">
+                      <tbody>
+                        <tr>
+                          <td><div style="padding:20px; margin-bottom:6px; background-color:#f5f4f4; text-align:left;"><h1>{{flexibleSchedule}}</h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc felis, fringilla eget nibh id, tincidunt semper arcu.</div></td>
+                        </tr>
+                        <tr>
+                          <td><div style="padding:20px; margin-bottom:6px; background-color:#f5f4f4; text-align:left;"><h1>Fitness</h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc felis, fringilla eget nibh id, tincidunt semper arcu.</div></td>
+                        </tr>
+                        <tr>
+                          <td><div style="padding:20px; margin-bottom:6px; background-color:#f5f4f4; text-align:left;"><h1>Vacation Policy</h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc felis, fringilla eget nibh id, tincidunt semper arcu.</div></td>
+                        </tr>
+                        <tr>
+                          <td><div style="padding:20px; margin-bottom:6px; background-color:#f5f4f4; text-align:left;"><h1>Happy Hours</h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc felis, fringilla eget nibh id, tincidunt semper arcu.</div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                </div>
+
+
+                <div style="height: 14px;"></div>
+                <a href="" class="toggle_slide" rel="#more" style="color:#00b5e0; text-decoration:none;">Learn more</a>
+
+
+
+                <script type='text/javascript' src='http://code.jquery.com/jquery-1.8.3.js'></script>
+                <script> 
+                  jQuery(function($) {
+                      $(".toggle_fade").click(function(e) {
+                          e.preventDefault();
+                          $($(this).attr('rel')).fadeToggle("3000")
+                      });
+                      
+                      $(".toggle_slide").click(function(e) {
+                          e.preventDefault();
+                          $($(this).attr('rel')).slideToggle("3000")
+                      });
+                  });
+                </script>
+
+
+            </div>
+
+          </div>
+          <!-- End Perk Icons -->
+
+          <!-- Start Job Openings -->
+          <div style="text-align:center; background-color:#fff; height:336px; margin-top:28px;">
+              <div style="padding: 10px 20px; line-height: 26px; color:#555; text-align:left;"><p style="color:#00b0e1; font-weight:bold; font-size: 14px;">Job Openings</p>
+                  <div style="padding: 18px; outline: #ccc 1px solid; margin-top: 10px;" class="over"><span class="jobs"><b><a href="/job.php">Account Executive - Entry Level</a></b><br />Austin, Texas</span></div>
+                  <div style="padding: 18px; outline: #ccc 1px solid; margin-top: 22px;" class="over"><span class="jobs"><b><a href="/job.php">Human Resource Team Member</a></b><br />Austin, Texas</span></div>
+                  <div style="padding: 18px; outline: #ccc 1px solid; margin-top: 22px;" class="over"><span class="jobs"><b><a href="/job.php">Accounting Data Entry Clerk</a></b><br />Austin, Texas</span></div>
+              </div>
+          </div>
+          <!-- End Job Openings -->
+
+
+          <div style="text-align:center; background-color:#fff; height:200px; margin-top:28px;">
+              <div style="padding: 10px 20px; line-height: 26px; color:#555; text-align:left;">
+                  <p style="color:#00b0e1; font-weight:bold; font-size: 14px;">Connect</p>
+
+                    <div style="text-align:center;">                  
+
+                          <a href="#" class="sign-up sign-up-1">Visit Company Page</a>
+                          
+                          <div style="margin-top: 20px;">
+                              <i class="fa fa-google-plus-square fa-4x" style="color:#00afe4; padding-right: 6px;"></i>
+                              <i class="fa fa-linkedin-square fa-4x" style="color:#00afe4; padding-right: 6px;"></i>
+                              <i class="fa fa-youtube-square fa-4x" style="color:#00afe4; padding-right: 6px;"></i>
+                              <i class="fa fa-twitter-square fa-4x" style="color:#00afe4; padding-right: 6px;"></i>
+                              <i class="fa fa-facebook-square fa-4x" style="color:#00afe4; padding-right: 6px;"></i>
+                          </div>
+                    </div>
+
+              </div>
+          </div>
+
+
+      </td>
+    
+      <td valign="top" width="20px">&nbsp;</td>
+    
+      <td valign="top" width="550px" bgcolor="#FFFFFF">
+
+          <div id="slideshow">
+             <div><a href="" style="border:0;"><img ng-src="{{cdata.pic1}}" width="500"></a></div>
+             <div><a href="" style="border:0;"><img ng-src="{{cdata.pic2}}" width="500"></a></div>
+          </div>
+
+        <div style="padding: 10px 30px; line-height: 26px; color:#555;">
+
+        <div style="padding: 20px; border: 1px solid #ccc; margin-top:28px; ">
+          <p style="color:#00b0e1; font-weight:bold; font-size: 14px; ">Company Overview </p><p style="font-size:14px;">{{cdata.companyInfo}}</p>
+        </div>
+
+        <div style="padding: 20px; border: 1px solid #ccc; margin-top:28px; ">
+          <p style="color:#00b0e1; font-weight:bold; font-size: 14px; ">Company Culture </p><p style="font-size:14px;">{{cdata.companyCulture}}</p>
+        </div>
+
+        <p style="color:#00b0e1; font-weight:bold; font-size: 14px; margin-top:28px;">Company Map</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3474.5346219237586!2d-98.47918225157471!3d29.44239521338352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1409447025372" width="490" height="400" frameborder="0" style="border:0"></iframe><br /><br />
+
+        </div>
+      </td>
+    
+    </tr>
+  </tbody>
+</table>
+
+
+
+</div>
+<!-- End Body Content 1-->
+
+<!-- Start Footer-->
+<div style="background-color:#00333f;">
+
+    <div style="width: 990px; height: 260px; margin: 0 auto; position: relative;">
+
+        <div style="position:absolute; top: 80px;"><img src="/img/footer-logo-man.png"></div>
+        <div style="position:absolute; top: 24px; right:0px;"><a href="index.php"><img src="/img/footer-logo.png" style="border:0;"></a></div>
+
+        <div style="position:absolute; top:56px; left:20px;">
+            <ul id="navlist">
+                <li><a href="/contact-us.php">Contact Us</a></li>
+                <li><a href="/blog.php">Blog</a></li>
+                <li><a href="/employers.php">Want to showcase your company?</a></li>
+                <li><a href="/privacy-policy.php">Privacy Policy</a></li>
+                <li><a href="/terms-conditions.php">Terms &amp; Conditions</a></li>
+                <!-- <li><a href="support.php">Support</a></li> -->
+            </ul>
+        </div>
+
+        <div style="position:absolute; top:90px; left:20px; color:#fff; font-size:14px;">2407 S. Congress Avenue<br />Suite E233 <br />Austin, TX. 78704<br /><br />hello@worksitement.com<br /><br /><span style="font-size: 11px; color:#8ca3a8;">Worksitem ent Copyright &copy;2014, All Rights Reserved</span></div>
+
+        <div style="position:absolute; top:160px; right:2px; color:#fff; color:#8ca3a8; width:170px;"> <a style="color:#8ca3a8;" href="https://twitter.com/WorkSitement"><i class="fa fa-twitter-square fa-4x" style="margin-right:12px;"></i></a> <a  style="color:#8ca3a8;" href="https://www.facebook.com/worksitement"><i class="fa fa-facebook-square fa-4x" style="margin-right:12px;"></i></a> <a  style="color:#8ca3a8;" href="http://www.pinterest.com/worksitement"><i class="fa fa-pinterest-square fa-4x"></i></a></div>
+
+    </div>
+
+</div>
+
+</div>
+<!-- End Footer -->
+<script type="text/javascript" src="/_js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/_js/angular/angular.js"></script>
+<script type="text/javascript" src="/ng/ctrl/idvCtrl.js"></script>
+<script type="text/javascript" src="/ng/fac/httpFac.js"></script>
+<script type="text/javascript" src="/ng/fac/parseFac.js"></script>
+<script>
+    $(function() {
+
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() {
+            $('#slideshow > div:first')
+                    .fadeOut(2000)
+                    .next()
+                    .fadeIn(2000)
+                    .end()
+                    .appendTo('#slideshow');
+        },  2900);
+
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>worksitement staging</title>
+    <meta name="viewport" content="width=990, maximum-scale=1.0"/>
+    <link href='css/style.css' rel='stylesheet'/>
+    <meta name="viewport" content="width=1000">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,900' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+
+        #sticky.stick {
+            position: fixed;
+            margin: 5% auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 10000;
+        }
+
+        .on {
+            background-color: #fff !important;
+            color: #00b5e0 !important;
+        }
+
+    </style>
+
+
+</head>
+<body ng-app="ngCom" ng-controller="ngListCtrl as list">
+
+<?php include("inc_header.php"); ?>
+
+<!-- Start Animated Hero -->
+
+<div style="width:500px; margin:0 auto;">
+    <div style="position:absolute; margin: 210px 0 0 0; width:550px;">
+        <!-- <div style="background-color:#00b5e0; width:990px; height: 90px; border-right:#00a0c6 1px solid; border-left:#00a0c6 1px solid; position: absolute; margin: 360px 0 0 0;"> -->
+
+        <!-- <form class="form-wrapper cf">
+            <input type="text" placeholder="enter zip code" required>
+            <button type="submit">Search</button>
+        </form>  -->
+
+        <!-- </div> -->
+    </div>
+</div>
+
+<div style="">
+
+    <div id="hero-home2" style="margin: 0 auto; text-align:center;">
+
+
+        <div style="font-family: 'Lato', sans-serif; font-size: 34px; color:#fff; padding: 140px 0 40px 0; font-weight: 900;">
+            Find The Job You Want, With A Company That's Right For You.<br/><span
+                style="font-family: 'Lato', sans-serif; font-weight: 300;">We'll Give You More Reasons To.</span></div>
+        <div style="text-align:center; width:990px; margin: 0 auto;" id="sticky-anchor"></div>
+
+        <div style="width:990px; margin: 0 auto; background-color:#016981; text-align:center; height:60px; padding-top:14px;"
+             id="sticky">
+            <div style="width:990px; margin: 0 auto;">
+
+                <table width="990" border="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+
+                        <td width="8" valign="middle"></td>
+                        <td width="200" valign="middle">
+                            <select id="select_location"
+                                    style="font-size: 16px; padding:9px; border: 1px solid #ccc; line-height: 1; width: 200px; border-radius: 0; background: url(http://svrep.org/images/dk_arrows.png) no-repeat right #fff; height: 38px; -webkit-appearance: none;"
+                                    name="select_location">
+                                <option data-rel="">All</option>
+                                <option data-rel="Austin">Austin, Texas</option>
+                                <option data-rel="San Antoio">San Antonio, Texas</option>
+                                <option data-rel="Dallas">Dallas, Texas</option>
+                            </select>
+                        </td>
+
+                        <td width="414" valign="middle"></td>
+                        <td width="180" valign="middle">
+                            <form>
+                                <button type="submit" formaction="" id="button" class="work_tabs on"
+                                        data-rel="company_items">Companies
+                                </button>
+                            </form>
+                        </td>
+                        <td width="180" valign="middle">
+                            <form>
+                                <button type="submit" formaction="jobs.php" id="button" class="work_tabs on"
+                                        data-rel="job_items">Jobs
+                                </button>
+                            </form>
+                        </td>
+
+                        <td width="8" valign="middle"></td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="body5">
+
+    <div id="company_items" class="work_items">
+
+
+        <!-- Company Entry Start -->
+        <div ng-repeat="cl in cList" data-location="{{cl.address.city}}" style=" float: left; width: 40%; margin: 10px;" >
+
+            <table width="480" border="1">
+                <tbody>
+                <tr>
+                    <td width="480">
+                        <div style="width: 100%; overflow: hidden; background-color:#fff; margin-top:20px;">
+                            <div style="width: 230px; float: left; text-align:center;">
+                                <img ng-src="{{cl.logo}}" style="margin-top:16px;" height="100" />
+
+                                <p style="font-size:12px; color:#898989; margin-bottom:4px;">{{cl.company}}</p>
+                                <p style="font-size:12px; color:#898989; margin-bottom:4px;">{{cl.industry}}</p>
+
+                                <p style="font-size:11px; color:#898989;">{{cl.address.city}}, {{cl.address.state}}</p>
+                                <a href="/companies/{{cl.company}}" class="sign-up sign-up-1">Learn More</a>
+                            </div>
+                            <div style="margin-left: 230px;  text-align:center;"><img ng-src="{{cl.pic1}}" width="250">
+                            </div>
+                        </div>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <!-- Company Entry End -->
+
+    </div>
+
+
+    <div id="job_items" class="work_items">
+
+        <!-- START JOB -->
+        <div style="margin-top:20px;" data-location="austin">
+            <div style="background-color:#fff; width:760px; float:left; height: 170px; padding:20px;">
+                <a style="font-size:22px; color:#00b5e2; margin:12px 0 8px 6px; font-weight:bold; text-decoration:none;"
+                   href="job.php">Software Engineer</a>
+
+                <p style="font-size:20px; color:#898989; margin:8px 0 0 6px;">Creative Gears</p>
+
+                <p style="font-size:16px; color:#898989; margin:12px 0 4px 6px;">Austin, Texas</p>
+
+                <p style="font-size:12px; color:#898989; margin:8px 0 0 6px;">Posted on : October 12, 2014</p>
+
+                <p style="font-size:16px; color:#898989; margin:18px 0 0 6px;">Perks Include: <img
+                        src="img/perk-icon-zen.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-health.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-happyhour.png" style="width: 24px; padding-right: 12px;"/></p>
+            </div>
+            <div style="margin-left:780px; width:170px; padding:20px; height: 170px; background-color:#fff; text-align:center;">
+                <img src="img/templogo-5a.gif" style="width:100px;"/><a href="company-page.php"
+                                                                        style="width: 114px; padding: 14px 20px !important;"
+                                                                        class="sign-up sign-up-1">Company Profile</a>
+            </div>
+        </div>
+        <!-- END JOB -->
+
+        <!-- START JOB -->
+        <div style="margin-top:20px;" data-location="dallas">
+            <div style="background-color:#fff; width:760px; float:left; height: 170px; padding:20px;">
+                <a style="font-size:22px; color:#00b5e2; margin:12px 0 8px 6px; font-weight:bold; text-decoration:none;"
+                   href="job.php">Sales Representative</a>
+
+                <p style="font-size:20px; color:#898989; margin:8px 0 0 6px;">Pencil Work</p>
+
+                <p style="font-size:16px; color:#898989; margin:12px 0 4px 6px;">Dallas, Texas</p>
+
+                <p style="font-size:12px; color:#898989; margin:8px 0 0 6px;">Posted on : October 12, 2014</p>
+
+                <p style="font-size:16px; color:#898989; margin:18px 0 0 6px;">Perks Include: <img
+                        src="img/perk-icon-cake.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-car.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-coffee.png" style="width: 24px; padding-right: 12px;"/></p>
+            </div>
+            <div style="margin-left:780px; width:170px; padding:20px; height: 170px; background-color:#fff; text-align:center;">
+                <img src="img/templogo-4a.gif" style="width:100px;"/><a href="company-page.php"
+                                                                        style="width: 114px; padding: 14px 20px !important;"
+                                                                        class="sign-up sign-up-1">Company Profile</a>
+            </div>
+        </div>
+        <!-- END JOB -->
+
+        <!-- START JOB -->
+        <div style="margin-top:20px;" data-location="dallas">
+            <div style="background-color:#fff; width:760px; float:left; height: 170px; padding:20px;">
+                <a style="font-size:22px; color:#00b5e2; margin:12px 0 8px 6px; font-weight:bold; text-decoration:none;"
+                   href="job.php">Director of Human Resources</a>
+
+                <p style="font-size:20px; color:#898989; margin:8px 0 0 6px;">Cloud</p>
+
+                <p style="font-size:16px; color:#898989; margin:12px 0 4px 6px;">Dallas, Texas</p>
+
+                <p style="font-size:12px; color:#898989; margin:8px 0 0 6px;">Posted on : October 12, 2014</p>
+
+                <p style="font-size:16px; color:#898989; margin:18px 0 0 6px;">Perks Include: <img
+                        src="img/perk-icon-fork.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-laptop.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-plant.png" style="width: 24px; padding-right: 12px;"/></p>
+            </div>
+            <div style="margin-left:780px; width:170px; padding:20px; height: 170px; background-color:#fff; text-align:center;">
+                <img src="img/templogo-3a.gif" style="width:100px;"/><a href="company-page.php"
+                                                                        style="width: 114px; padding: 14px 20px !important;"
+                                                                        class="sign-up sign-up-1">Company Profile</a>
+            </div>
+        </div>
+        <!-- END JOB -->
+
+        <!-- START JOB -->
+        <div style="margin-top:20px;" data-location="sa">
+            <div style="background-color:#fff; width:760px; float:left; height: 170px; padding:20px;">
+                <a style="font-size:22px; color:#00b5e2; margin:12px 0 8px 6px; font-weight:bold; text-decoration:none;"
+                   href="job.php">Customer Success Manager</a>
+
+                <p style="font-size:20px; color:#898989; margin:8px 0 0 6px;">Green Village</p>
+
+                <p style="font-size:16px; color:#898989; margin:12px 0 4px 6px;">San Antonio, Texas</p>
+
+                <p style="font-size:12px; color:#898989; margin:8px 0 0 6px;">Posted on : October 12, 2014</p>
+
+                <p style="font-size:16px; color:#898989; margin:18px 0 0 6px;">Perks Include: <img
+                        src="img/perk-icon-stork.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-play.png" style="width: 24px; padding-right: 6px;"/> <img
+                        src="img/perk-icon-suit.png" style="width: 24px; padding-right: 12px;"/></p>
+            </div>
+            <div style="margin-left:780px; width:170px; padding:20px; height: 170px; background-color:#fff; text-align:center;">
+                <img src="img/templogo-2a.gif" style="width:100px;"/><a href="company-page.php"
+                                                                        style="width: 114px; padding: 14px 20px !important;"
+                                                                        class="sign-up sign-up-1">Company Profile</a>
+            </div>
+        </div>
+        <!-- END JOB -->
+
+    </div>
+
+</div>
+
+
+<?php include("inc_footer.php"); ?>
+
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+    jQuery(function ($) {
+        var started = {
+            locations: 0,
+            tabs: 0
+        };
+        $('#select_location').change(function () {
+            var $selected = $('#select_location option:selected');
+            var items_id = $('.work_tabs.on').first().attr('data-rel');
+            ;
+
+            $('#' + items_id + ' > div').css('display', 'none');
+
+            if (!$selected.attr('data-rel')) {
+                $('#' + items_id + ' > div').css('display', 'block');
+            }
+            else {
+                $("#" + items_id + " div[data-location='" + $selected.attr('data-rel') + "']").css('display', 'block');
+            }
+            if (started.locations > 1) {
+                $('#hero-home2-temp').css('display', 'none');
+            }
+
+            scrollToContext();
+            started.locations++;
+        });
+
+        $('#select_location').change();
+
+
+        $('.work_tabs').on('click', function (e) {
+            e.preventDefault();
+            $('.work_tabs').removeClass('on');
+            $(this).addClass('on');
+            var work_tab = $('.work_tabs.on').first().attr('data-rel');
+            $('.work_items').css('display', 'none');
+            $('#' + work_tab).css('display', 'block');
+            $('#select_location').change();
+
+            if (started.tabs) {
+                $('#hero-home2-temp').css('display', 'none');
+            }
+
+            scrollToContext();
+            started.tabs++;
+            ;
+
+        });
+
+        function scrollToContext() {
+            if (started.tabs && started.locations) {
+                $.scrollTo('#hero-home2', 400);
+            }
+        }
+
+        $('.work_tabs').each(function () {
+            if ($(this).hasClass('on')) {
+                $(this).click();
+            }
+        });
+
+
+    });
+</script>
+
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+
+<script type="text/javascript" src="/_js/jquery/jquery.js"></script>
+<script type="text/javascript" src="/_js/angular/angular.js"></script>
+<script type="text/javascript" src="/ng/ctrl/listCtrl.js"></script>
+<script type="text/javascript" src="/ng/fac/httpFac.js"></script>
+<script type="text/javascript" src="/ng/fac/parseFac.js"></script>
+
+<script>
+    function sticky_relocate() {
+        var window_top = $(window).scrollTop();
+        var div_top = $('#sticky-anchor').offset().top;
+        if (window_top > div_top) {
+            $('#sticky').addClass('stick');
+        } else {
+            $('#sticky').removeClass('stick');
+        }
+    }
+
+    $(function () {
+        $(window).scroll(sticky_relocate);
+        sticky_relocate();
+    });
+</script>
+
+</body>
+</html>

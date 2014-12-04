@@ -1,0 +1,33 @@
+{
+    "name": "Worksitement",
+    "version": "1.0.0",
+    "authors": [
+        "Yixin Xia <yxia@utexas.edu>"
+    ],
+    "description": "Worksitement Website",
+    "main": "index.php",
+    "keywords": [
+        "worksitement"
+    ],
+    "license": "MIT",
+    "homepage": "http://www.worksitement.com",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "jquery": "latest",
+        "jquery-ui": "latest",
+        "jquery-waypoints": "latest",
+        "angular": "latest"
+    },
+    "install" : {
+        "path"  : {
+            "js": "_js/",
+            "css": "_css/"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+*.php
+bower_components
+.sass-cache
+stylesheets
+sass
+js
+img
+css
+.idea

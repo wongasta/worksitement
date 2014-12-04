@@ -1,0 +1,13 @@
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} ^/webs
+RewriteRule ^.*$ "http\:\/\/127\.0\.0\.1\:8000%{REQUEST_URI}" [P,QSA,L]
+
+RewriteCond %{REQUEST_URI} ^/companies
+RewriteRule !\.(jpe?g|gif|ico|png|js|css)$ "http\:\/\/worksitement\.com\/company-page\.html" [P,NC,L]
+
+RewriteCond %{HTTP_HOST} ^worksitement\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.worksitement\.com$
+RewriteRule ^/?$ "http\:\/\/signup\.worksitement\.com\/" [R=301,L]
+
