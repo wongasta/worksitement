@@ -1,7 +1,7 @@
 var async = require('async');
 
 //Clears all redis wsc cache for Formstack API calls
-exports.init = function (req, res, envParam, rClient) {
+exports.init = function (req, res, envParam, rClient, cachePrefix) {
 
     var deletedRows = [];
     //to be called by below keys first
@@ -14,15 +14,11 @@ exports.init = function (req, res, envParam, rClient) {
     };
 
     //Loops through KEYS wsc: etc - then async run each deletes
-    rClient.keys(envParam.prod.rCompanyPrefix+'*', function(err, row){
-        if(err){
-            throw(err);
-        }
+    rClient.keys(cachePrefix+'*', function(err, row){
+        if(err){ throw(err); }
 
         async.forEach(row, delRow, function(err){
-            if(err){
-                throw(err);
-            }
+            if(err){ throw(err); }
 
             res.setHeader('Content-Type', 'application/json');
             res.send(deletedRows);

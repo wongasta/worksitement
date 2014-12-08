@@ -112,7 +112,7 @@
 
 
         <!-- Company Entry Start -->
-        <div ng-repeat="cl in cList" data-location="{{cl.address.city}}" style=" float: left; width: 40%; margin: 10px;" >
+        <div ng-repeat="cl in cList" data-location="{{cl.address.city}}" style=" float: left; width: 450px; margin: 10px;" >
 
             <table width="480" border="1">
                 <tbody>
@@ -128,7 +128,7 @@
                                 <p style="font-size:11px; color:#898989;">{{cl.address.city}}, {{cl.address.state}}</p>
                                 <a href="/companies/{{cl.company}}" class="sign-up sign-up-1">Learn More</a>
                             </div>
-                            <div style="margin-left: 230px;  text-align:center;"><img ng-src="{{cl.pic1}}" width="250">
+                            <div style="margin-left: 230px;  text-align:center; width:250px; overflow:hidden;"><img ng-src="{{resizeImage(cl.id, imageHeight, 0)}}" />
                             </div>
                         </div>
                     </td>

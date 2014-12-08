@@ -81,6 +81,7 @@ app.factory('parseFac', function(){
 
     return{
         'parseCompanyPage': function(data, cdata){
+            console.log(data);
             angular.forEach(data, function(v, k){
                 evalID(v, 'scope', cdata);
             })
@@ -89,7 +90,8 @@ app.factory('parseFac', function(){
             console.log(data);
             angular.forEach(data, function(comV,comK){
                 var compObj = {};
-                angular.forEach(comV, function(v,k){
+                compObj['id']=comV.id;
+                angular.forEach(comV.data, function(v,k){
                     var rtnObj = evalID(v, '', cdata);
                     if (typeof rtnObj != 'undefined'){
                         compObj[rtnObj.key]= rtnObj.value;

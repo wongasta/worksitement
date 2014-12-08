@@ -49,7 +49,7 @@ app.factory('httpFac', function ($http, parseFac) {
                         matchedData=v;
                         angular.forEach(v.data, function(vc,kc){
                             if(vc.field==='28902141' && vc.value==="true"){
-                                cListData.push(matchedData.data);
+                                cListData.push(matchedData);
                             }
                         });
                     });

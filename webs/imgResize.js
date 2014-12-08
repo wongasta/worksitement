@@ -1,19 +1,41 @@
 var im = require("imagemagick");
 var fs = require('fs');
 //todo - since resizing each image will take forever, I need to cache each image as binary data in Redis
-//xxxxxxxx - cid
-//Key format wsi:xxxxxxxx:0/1/2/3
-//http://redis.io/topics/data-types-intro
-exports.init = function (req, res, envParam) {
-    var imgUrl = req.query.imgurl;
+
+exports.init = function (req, res, envParam, rClient) {
+
+
+    var imgUrl = 'https://s3.amazonaws.com/files.formstack.com/uploads/1853804/28269545/170891852/28269545_office_photo_1.jpg';
 
     im.resize({
         srcPath: imgUrl,
-        width: 256
+        height: 280
     }, function(err, stdout, stderr){
         if (err) throw err;
 
+
         res.contentType("image/jpeg");
         res.end(stdout, 'binary');
+
+//        rClient.set('wsi:testimg', stdout, function(err, rres){
+//            if(err){
+//                throw err;
+//            }
+//            console.log('set now');
+//
+//            res.contentType("image/jpeg");
+//            res.end(stdout, 'binary');
+//        });
     });
+//
+//    rClient.get('wsi:testimg', function(err, rres){
+//        if(err){ throw err; }
+//
+//        console.log(rres);
+//
+//        res.contentType("image/jpeg");
+//        res.end(rres, 'binary');
+//
+//    });
+
 };

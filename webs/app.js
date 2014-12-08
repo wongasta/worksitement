@@ -41,6 +41,7 @@ var envParam = {
         'apiKey': '6fddd195746b9ddc97f9be319625fe26',
         'formID': '1853804',
         'rCompanyPrefix': 'wsc',
+        'rImgPrefix': 'wsi',
         'rCompanyTTL': 10800
     },
     'dev':{
@@ -67,31 +68,56 @@ app.use(function (req, res, next) {
 
 app.get(mainMod.parseURL('/formInfo'), function(req, res){
     var formMod = require('./formInfo.js');
-    formMod.init(req, res, envParam, rClient);
+    var completionCallback = function(result){
+        res.setHeader('Content-Type', 'application/json');
+        res.send(result);
+    };
+    formMod.init(envParam, rClient, completionCallback);
 });
 
 app.get(mainMod.parseURL('/companyInfo/:id'), function (req, res) {
     var companyMod = require('./companyInfo.js');
-    companyMod.init(req, res, envParam);
+    var cid = req.params.id;
+    var completionCallback = function(result){
+        res.setHeader('Content-Type', 'application/json');
+        res.send(result);
+    };
+    companyMod.init(envParam, rClient, cid, completionCallback);
 });
 
 /* Routes for cache/aux modules */
 
 app.get(mainMod.parseURL('/ccClear'), function (req, res) {
-    var ccClearMod = require('./ccClear.js');
-    ccClearMod.init(req, res, envParam, rClient);
+    var ccClearMod = require('./cacheClear.js');
+    ccClearMod.init(req, res, envParam, rClient, envParam.prod.rCompanyPrefix);
 });
 
-app.get(mainMod.parseURL('/cgClear'), function (req, res) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send({'status': 'success'});
+app.get(mainMod.parseURL('/ciClear'), function (req, res) {
+    var ccClearMod = require('./cacheClear.js');
+    ccClearMod.init(req, res, envParam, rClient, envParam.prod.rImgPrefix);
 });
 
 /* Routes for resizing img */
 
+//Testing Route
 app.get(mainMod.parseURL('/imgResize'), function (req, res) {
     var imgResizeMod = require('./imgResize.js');
-    imgResizeMod.init(req, res, envParam);
+    imgResizeMod.init(req, res, envParam, rClient);
+});
+
+//Image Service
+app.get(mainMod.parseURL('/img/:cid/:height/:iid'), function (req, res) {
+    var imgResizeMod = require('./imgService.js');
+    var img = {
+        'height': req.params.height,
+        'cid': req.params.cid,
+        'iid': req.params.iid
+    };
+    var completionCallback = function(result){
+        res.contentType("image/jpeg");
+        res.end(result, 'binary');
+    };
+    imgResizeMod.init(img, envParam, rClient, completionCallback);
 });
 
 app.listen(port);
