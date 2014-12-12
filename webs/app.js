@@ -38,7 +38,7 @@ mainMod.parseArgs();
 var envParam = {
     'prod': {
         //PRIVATE KEY DO NOT GIVE OUT!
-        'apiKey': '6fddd195746b9ddc97f9be319625fe26',
+        'apiKey': 'you cant see this lulz',
         'formID': '1853804',
         'rCompanyPrefix': 'wsc',
         'rImgPrefix': 'wsi',
