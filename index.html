@@ -67,13 +67,9 @@
 
                         <td width="8" valign="middle"></td>
                         <td width="200" valign="middle">
+
                             <select id="select_location"
-                                    style="font-size: 16px; padding:9px; border: 1px solid #ccc; line-height: 1; width: 200px; border-radius: 0; background: url(http://svrep.org/images/dk_arrows.png) no-repeat right #fff; height: 38px; -webkit-appearance: none;"
-                                    name="select_location">
-                                <option data-rel="">All</option>
-                                <option data-rel="Austin">Austin, Texas</option>
-                                <option data-rel="San Antoio">San Antonio, Texas</option>
-                                <option data-rel="Dallas">Dallas, Texas</option>
+                                    style="font-size: 16px; padding:9px; border: 1px solid #ccc; line-height: 1; width: 200px; border-radius: 0; background: url(http://svrep.org/images/dk_arrows.png) no-repeat right #fff; height: 38px; -webkit-appearance: none;" name="select_location" ng-model="selectCity" ng-options="city for city in uniqueCities()">
                             </select>
                         </td>
 
@@ -112,7 +108,7 @@
 
 
         <!-- Company Entry Start -->
-        <div ng-repeat="cl in cList" data-location="{{cl.address.city}}" style=" float: left; width: 450px; margin: 10px;" >
+        <div ng-repeat="cl in cList" data-location="{{cl.address.city}}" style=" float: left; width: 450px; margin: 10px;" ng-show="showDiv(cl.address.city)" >
 
             <table width="480" border="1">
                 <tbody>

@@ -1,9 +1,7 @@
 var im = require("imagemagick");
 var fs = require('fs');
-//todo - since resizing each image will take forever, I need to cache each image as binary data in Redis
 
 exports.init = function (req, res, envParam, rClient) {
-
 
     var imgUrl = 'https://s3.amazonaws.com/files.formstack.com/uploads/1853804/28269545/170891852/28269545_office_photo_1.jpg';
 
